@@ -1,6 +1,7 @@
-.active {
-  color: white;
-  background-color: pink;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 /*包含以下五种的链接*/
 a {

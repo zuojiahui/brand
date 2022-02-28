@@ -1,13 +1,12 @@
-import React, { Fragment, useState, useMemo,useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Moon, BellOutlined, Cloud, DownOutlined } from "../../utils/icons";
 import { routers } from "../../routes";
 import "./style.css";
 export default function Index() {
+  const navigate = useNavigate();
   // 控制搜索框宽度
   const [wide, setWide] = useState("");
-  // 页面信息
-  const [pageInfo, setPageInfo] = useState({});
   // 切换主题
   const changeTheme = () => document.body.classList.toggle("light-mode");
   //   输入框获取焦点事件
@@ -20,19 +19,7 @@ export default function Index() {
     if (list.length > 0 && list[0]?.children) return list[0].children;
     return [];
   };
-  // 📃 显示右侧对应路由页面
-  const changeContainer = (page) => setPageInfo(page);
 
-  // 👉 右侧显示内容
-  const container = useMemo(() => {
-    return (
-      <div className="main-container">
-        <div className="content-wrapper">{pageInfo?.element}</div>
-      </div>
-    );
-  }, [pageInfo]);
-
-  useEffect(()=>{},[])
   return (
     <div className="theme">
       {/* 背景区域 */}
@@ -70,29 +57,34 @@ export default function Index() {
         </div>
         <div className="wrapper">
           <div className="left-side">
-            <div className="side-menu">
-              {routerList().map((item, index) => {
+            <div>
+              <div className="side-menu">
+                {routerList().map((item, index) => {
                 return (
-                  <Link
-                    to={item.path}
+                  <div
                     key={index}
-                    onClick={() => changeContainer(item)}
+                    onClick={() => item?.path && navigate(item?.path)}
                   >
-                    <div className="left-titile">
+                    <section className="left-titile">
                       {item?.icon}
                       {item?.name}
-                    </div>
+                    </section>
                     <Fragment>
                       {Array.isArray(item?.children) &&
                         item.children.length > 0 && <DownOutlined />}
                     </Fragment>
-                  </Link>
+                  </div>
                 );
               })}
+              </div>
             </div>
           </div>
           {/* 内容区域 */}
-          {container}
+          <div className="main-container">
+            <div className="content-wrapper">
+              <Outlet />
+            </div>
+          </div>
         </div>
       </div>
     </div>

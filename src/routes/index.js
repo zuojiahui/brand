@@ -1,22 +1,8 @@
-import BasicLayout from "../layouts/BasicLayout";
-import Notfined from "../page/404";
+import asyncComponent from "../components/AsynComponent";
 import { AppstoreOutlined, UndoOutlined, Camera } from "../utils/icons";
-// const data = [
-//   { name: "All Apps", icon: <AppstoreOutlined /> },
-//   { name: "Updates", icon: <UndoOutlined /> },
-//   { name: "Photography", icon: <Camera /> },
-//   { name: "Video", icon: <Video /> },
-//   { name: "Graphic Design", icon: <Hand /> },
-//   { name: "Illustrations", icon: <Pen /> },
-//   { name: "UI/UX", icon: <Computer /> },
-//   { name: "3D/AR", icon: <ThreeD /> },
-//   { name: "Social Forum", icon: <Chat /> },
-// ];
+const BasicLayout = asyncComponent(() => import("../layouts/BasicLayout"));
+const Notfined = asyncComponent(() => import("../page/404"));
 export const routers = [
-  {
-    path: "/login",
-    component: <div>登陆页面</div>,
-  },
   {
     path: "/",
     component: <BasicLayout />,
@@ -48,6 +34,10 @@ export const routers = [
         component: "Photography",
       },
     ],
+  },
+  {
+    path: "/login",
+    component: <div>登陆页面</div>,
   },
   {
     path: "*",
