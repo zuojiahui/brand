@@ -1,8 +1,13 @@
 import asyncComponent from "../components/AsynComponent";
 import { AppstoreOutlined, UndoOutlined, Camera } from "../utils/icons";
+const Login = asyncComponent(() => import("../layouts/UserLayout"));
 const BasicLayout = asyncComponent(() => import("../layouts/BasicLayout"));
 const Notfined = asyncComponent(() => import("../page/404"));
 export const routers = [
+  {
+    path: "/login",
+    component: <Login />,
+  },
   {
     path: "/",
     component: <BasicLayout />,
@@ -34,10 +39,6 @@ export const routers = [
         component: "Photography",
       },
     ],
-  },
-  {
-    path: "/login",
-    component: <div>登陆页面</div>,
   },
   {
     path: "*",
