@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "../../components";
+import { Table ,Pagination} from "../../components";
 
 export default function Index() {
   const columns = () => [
@@ -34,6 +34,7 @@ export default function Index() {
   return (
     <div>
       <Table columns={columns} dataSource={dataSource} rowKey="id" />
+      <Pagination></Pagination>
     </div>
   );
 }
