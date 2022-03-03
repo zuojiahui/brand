@@ -1,9 +1,15 @@
 import React, { Fragment } from "react";
 import "./style.css";
 export default function Index(props) {
+  /*
+  columns: 表格列               object[]  || function
+  dataSource: 表格行数据         object[]
+  rowKey： 表格行 key 的取值      string
+  */
   const { columns = [], dataSource = [], rowKey = "" } = props;
   return (
     <Fragment>
+      {/* 表格列 */}
       <div className="tbl-header">
         <table cellPadding="0" cellSpacing="0" border="0">
           <thead>
@@ -20,6 +26,7 @@ export default function Index(props) {
           </thead>
         </table>
       </div>
+      {/* 表格行*/}
       <div className="tbl-content">
         <table cellPadding="0" cellSpacing="0" border="0">
           <tbody>
