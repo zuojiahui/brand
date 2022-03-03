@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Table } from "../../components";
 
-export default function index() {
+export default function Index() {
   return (
-    <div>index</div>
-  )
+    <div>
+      <Table />
+    </div>
+  );
 }

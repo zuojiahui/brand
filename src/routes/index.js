@@ -3,6 +3,7 @@ import { AppstoreOutlined, UndoOutlined, Camera } from "../utils/icons";
 const Login = asyncComponent(() => import("../layouts/UserLayout"));
 const BasicLayout = asyncComponent(() => import("../layouts/BasicLayout"));
 const Notfined = asyncComponent(() => import("../page/404"));
+const Home = asyncComponent(() => import("../page/Home"));
 export const routers = [
   {
     path: "/login",
@@ -16,7 +17,7 @@ export const routers = [
         path: "/apps",
         name: "All Apps",
         icon: <AppstoreOutlined />,
-        component: "All Apps",
+        component: <Home/>,
         routes: [
           {
             path: "/apps/a",
