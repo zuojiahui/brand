@@ -1,21 +1,22 @@
-table {
+.tbl-header table,
+.tbl-content table {
   width: 100%;
   table-layout: fixed;
 }
-th {
-  padding: 20px 15px;
+.tbl-header th {
+  padding: 15px;
   text-align: left;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--theme-color);
   text-transform: uppercase;
 }
-td {
+.tbl-content td {
   padding: 15px;
   text-align: left;
   vertical-align: middle;
-  font-weight: 300;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 13px;
   color: var(--theme-color);
   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
@@ -23,18 +24,22 @@ td {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .tbl-content {
-  height: 300px;
   overflow-x: auto;
   margin-top: 0px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.styleAlign {
+  display: flex;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px var(--theme-color);;
+  box-shadow: inset 0 0 6px var(--theme-color);
 }
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px var(--theme-color);;
+  box-shadow: inset 0 0 6px var(--theme-color);
 }
