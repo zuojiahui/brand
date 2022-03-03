@@ -452,7 +452,7 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              <div className="content-section">
+              {/* <div className="content-section">
                 <div className="content-section-title">Apps in your plan</div>
                 <div className="apps-card">
                   <div className="app-card">
@@ -550,7 +550,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
