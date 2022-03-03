@@ -3,6 +3,10 @@
   width: 100%;
   table-layout: fixed;
 }
+.tbl-header tr,
+.tbl-content tr {
+  background-color: var(--theme-bg-color);
+}
 .tbl-header th {
   padding: 15px;
   text-align: left;
