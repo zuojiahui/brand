@@ -34,7 +34,9 @@ export default function Index() {
   return (
     <div>
       <Table columns={columns} dataSource={dataSource} rowKey="id" />
-      <Pagination></Pagination>
+      <Pagination total={20} current={1} onChange={(page)=>{
+        console.log(page,"page")
+      }}/>
     </div>
   );
 }
