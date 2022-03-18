@@ -1,6 +1,5 @@
 import React from "react";
-import { Table ,Pagination} from "../../components";
-
+import { Table ,Pagination,Button} from "../../components";
 export default function Index() {
   const columns = () => [
     {
@@ -37,6 +36,7 @@ export default function Index() {
       <Pagination total={20} current={1} onChange={(page)=>{
         console.log(page,"page")
       }}/>
+      <Button></Button>
     </div>
   );
 }
